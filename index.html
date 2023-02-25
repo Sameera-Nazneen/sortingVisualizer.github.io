@@ -13,19 +13,24 @@
     <nav>
         <div class="row">
             <div class="col gap-2 d-sm-flex" id="newArray">
-                <button type="button" class="btn btn-outline-success newArray">New Array</button>
+                <button type="button" class="btn btn-outline-success newArray" onclick="createNewArray()">New Array</button>
             </div>
             <div class="col" id="input">
+                <span id="size">Size
+                    <input id="arr_sz" type="range" min="5" max="100" step=1 value=60>
+                </span>
                 <span id="speed">Speed
                     <input id="speed_input" type="range" min="20" max="300" stepDown=10 value=60>
                 </span>
             </div>
             <div class="Sorting navBar">
+              
                 <button type="button" class="btn-dark selectionSort">Selection Sort</button>
                 <button type="button" class="btn-dark insertionSort">Insertion Sort</button>
                 <button type="button" class="btn-dark quickSort">Quick Sort</button>
                 <button type="button" class="btn-dark bubbleSort">Bubble Sort</button>
                 <button type="button" class="btn-dark mergeSort">Merge Sort</button>
+           
 
             </div>
         </div>
