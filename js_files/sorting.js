@@ -83,21 +83,37 @@ createNewArray();
 /**
  * Complete this method to create Bars of random heights
  */
-function createNewArray(noOfBars = 60) {
+function createNewArray(noOfBars = 100) {
     // calling helper function to delete old bars from dom
     deleteChild();
 
     // create an array of random numbers 
     array = [];
+    for(let i=0; i <noOfBars; i++)
+    {
+        array.push(Math.floor(Math.random()*100));
+    }
+
     // select the div #bars element
     const bars = document.querySelector("#bars");
 
     // create multiple element div using loop and adding class 'bar col'
-    for (let i = 0; i < noOfBars; i++) {
+    for (let i = 0; i < noOfBars; i++)
+     {
         //create element
         // update height of bar
         // add appropriate styling class to the element
         // add element to the DOM by appending to the div #bars
+            const bar = document.createElement("div");
+           
+            array[i] = Math.floor(Math.random()*100);
+            
+           
+            bar.classList.add("bar");
+            bars.appendChild(bar);
+            bar.style.height = `${array[i]*3}px`;
+          
+        
     }
 }
 
