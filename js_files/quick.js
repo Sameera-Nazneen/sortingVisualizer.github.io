@@ -3,7 +3,47 @@ async function partitionLomuto(ele, l, r){
     let i = l - 1;
     // color pivot element
     ele[r].style.background = 'red';
-    // write your code here
+    for(let j = l; j <= r - 1; j++){
+        console.log('In partitionLomuto for j');
+        // color current element
+        ele[j].style.background = 'yellow';
+        // pauseChamp
+        await waitforme(delay);
+
+        if(parseInt(ele[j].style.height) < parseInt(ele[r].style.height)){
+            console.log('In partitionLomuto for j if');
+            i++;
+            swap(ele[i], ele[j]);
+            // color 
+            ele[i].style.background = 'orange';
+            if(i != j) ele[j].style.background = 'orange';
+            // pauseChamp
+            await waitforme(delay);
+        }
+        else{
+            // color if not less than pivot
+            ele[j].style.background = 'pink';
+        }
+    }
+    i++; 
+    // pauseChamp
+    await waitforme(delay);
+    swap(ele[i], ele[r]); // pivot height one
+    console.log(`i = ${i}`, typeof(i));
+    // color
+    ele[r].style.background = 'pink';
+    ele[i].style.background = 'green';
+
+    // pauseChamp
+    await waitforme(delay);
+    
+    // color
+    for(let k = 0; k < ele.length; k++){
+        if(ele[k].style.background != 'green')
+            ele[k].style.background = 'cyan';
+    }
+
+    return i;
 }
 
 async function quickSort(ele, l, r){
