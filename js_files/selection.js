@@ -2,7 +2,7 @@
  * NOTE: SELECTION SORT SOLUTION IS GIVEN AS A REFERECE TO COMPLETE THE OTHER SORTING ALGORITHMS
  */
 
- async function selection(){
+async function selection(){
     console.log('In selection()');
     const ele = document.querySelectorAll(".bar");
     for(let i = 0; i < ele.length; i++){
@@ -14,7 +14,7 @@
             console.log('In jth loop');
             // Change color for the current comparision (in consideration for min_index)
             ele[j].style.background = 'red';
-
+  
             await waitforme(delay);
             if(parseInt(ele[j].style.height) < parseInt(ele[min_index].style.height)){
                 console.log('In if condition height comparision');
@@ -35,11 +35,12 @@
         ele[min_index].style.background = 'cyan';
         // change the sorted elements color to green
         ele[i].style.background = 'green';
+        
     }
-}
-
-const selectionSortbtn = document.querySelector(".selectionSort");
-selectionSortbtn.addEventListener('click', async function(){
+  }
+  
+  const selectionSortbtn = document.querySelector(".selectionSort");
+  selectionSortbtn.addEventListener('click', async function(){
     disableSortingBtn();
     disableSizeSlider();
     disableNewArrayBtn();
@@ -47,4 +48,4 @@ selectionSortbtn.addEventListener('click', async function(){
     enableSortingBtn();
     enableSizeSlider();
     enableNewArrayBtn();
-});
+  });
